@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Temperature Converter - CalcWise</title>
+
+    <link rel="stylesheet" href="study.css">
+</head>
+
+<body>
+
+<header>
+
+    <div class="logo">
+        <img src="calc.jpg" alt="CalcWise Logo" class="logo-img">
+         CALCWISE</div>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="index.html">All Calculators</a>
+        <a href="#">About</a>
+    </nav>
+
+</header>
+
+<main>
+
+    
+<a class="back" href="math.html">← Back to Mathematics and Science Calc</a>
+    <section class="hero">
+
+        <h1>Temperature Converter</h1>
+
+        <p>
+            Convert temperatures between Celsius, Fahrenheit, and Kelvin.
+        </p>
+
+    </section>
+
+    <section class="card">
+
+        <label>Enter Temperature</label>
+
+        <input
+            type="number"
+            id="temperature"
+            placeholder="Enter temperature"
+        >
+
+        <label>From</label>
+
+        <select id="fromUnit">
+
+            <option value="C">Celsius (°C)</option>
+            <option value="F">Fahrenheit (°F)</option>
+            <option value="K">Kelvin (K)</option>
+
+        </select>
+
+        <label>To</label>
+
+        <select id="toUnit">
+
+            <option value="C">Celsius (°C)</option>
+            <option value="F">Fahrenheit (°F)</option>
+            <option value="K">Kelvin (K)</option>
+
+        </select>
+
+        <button onclick="convertTemperature()">
+            Convert Temperature
+        </button>
+
+        <div class="result">
+
+            <div>Converted Temperature</div>
+
+            <div class="value" id="result">--</div>
+
+        </div>
+
+    </section>
+
+</main>
+
+<footer>
+    © 2026 CalcWise. All rights reserved.
+</footer>
+
+
+<script>
+
+function convertTemperature() {
+
+    let temperature = Number(
+        document.getElementById("temperature").value
+    );
+
+    let fromUnit =
+        document.getElementById("fromUnit").value;
+
+    let toUnit =
+        document.getElementById("toUnit").value;
+
+
+    
+    if (isNaN(temperature)) {
+
+        document.getElementById("result").textContent =
+            "Please enter a temperature.";
+
+        return;
+    }
+
+
+    
+    if (fromUnit === "K" && temperature < 0) {
+
+        document.getElementById("result").textContent =
+            "Kelvin cannot be below 0.";
+
+        return;
+    }
+
+
+    
+    let celsius;
+
+    if (fromUnit === "C") {
+
+        celsius = temperature;
+
+    } else if (fromUnit === "F") {
+
+        celsius = (temperature - 32) * 5 / 9;
+
+    } else {
+
+        celsius = temperature - 273.15;
+    }
+
+
+    
+    let result;
+
+    if (toUnit === "C") {
+
+        result = celsius;
+
+    } else if (toUnit === "F") {
+
+        result = (celsius * 9 / 5) + 32;
+
+    } else {
+
+        result = celsius + 273.15;
+    }
+
+
+  
+    if (toUnit === "K" && result < 0) {
+
+        document.getElementById("result").textContent =
+            "Temperature is below absolute zero.";
+
+        return;
+    }
+
+
+    let symbol;
+
+    if (toUnit === "C") {
+
+        symbol = "°C";
+
+    } else if (toUnit === "F") {
+
+        symbol = "°F";
+
+    } else {
+
+        symbol = "K";
+    }
+
+
+    document.getElementById("result").textContent =
+        result.toFixed(2) + " " + symbol;
+
+}
+
+</script>
+
+</body>
+
+</html>

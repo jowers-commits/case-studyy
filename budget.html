@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Budget Calculator</title>
+
+    
+    <link rel="stylesheet" href="study.css">
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header>
+
+        <div class="logo">
+            <img src="calc.jpg" alt="CalcWise Logo" class="logo-img">
+             CALCWISE
+        </div>
+
+            <nav>
+        <a href="index.html">Home</a>
+        <a href="index.html">All Calculators</a>
+        <a href="#">About</a>
+    </nav>
+
+
+    </header>
+
+
+    <!-- MAIN CONTENT -->
+    <main>
+
+        <a class="back" href="money.html">← Back to About Money</a>
+
+
+        <!-- HERO -->
+        <section class="hero">
+
+            <h1>Budget Calculator</h1>
+
+            <p>
+                Calculate your remaining budget by subtracting
+                your total expenses from your income.
+            </p>
+
+        </section>
+
+
+        <!-- CALCULATOR CARD -->
+        <section class="card">
+
+            <h2>Enter Your Budget</h2>
+
+            <p>
+                Enter your income and expenses below to see
+                your remaining budget.
+            </p>
+
+
+            <!-- INCOME -->
+            <label for="income">
+                Monthly Income (₱)
+            </label>
+
+            <input
+                type="number"
+                id="income"
+                placeholder="Enter your income"
+                min="0"
+            >
+
+
+            <!-- EXPENSES -->
+            <div class="row">
+
+                <div>
+                    <label for="food">
+                        Food
+                    </label>
+
+                    <input
+                        type="number"
+                        id="food"
+                        placeholder="₱0"
+                        min="0"
+                    >
+                </div>
+
+
+                <div>
+                    <label for="transport">
+                        Transportation
+                    </label>
+
+                    <input
+                        type="number"
+                        id="transport"
+                        placeholder="₱0"
+                        min="0"
+                    >
+                </div>
+
+            </div>
+
+
+            <div class="row">
+
+                <div>
+                    <label for="utilities">
+                        Utilities
+                    </label>
+
+                    <input
+                        type="number"
+                        id="utilities"
+                        placeholder="₱0"
+                        min="0"
+                    >
+                </div>
+
+
+                <div>
+                    <label for="other">
+                        Other Expenses
+                    </label>
+
+                    <input
+                        type="number"
+                        id="other"
+                        placeholder="₱0"
+                        min="0"
+                    >
+                </div>
+
+            </div>
+
+
+            <!-- BUTTON -->
+            <button id="calculateBtn">
+                Calculate Budget
+            </button>
+
+
+            <!-- RESULT -->
+            <div class="result">
+
+                <p>Total Expenses</p>
+
+                <div class="value" id="expenses">
+                    ₱0.00
+                </div>
+
+
+                <p>Remaining Budget</p>
+
+                <div class="value" id="remaining">
+                    ₱0.00
+                </div>
+
+
+                <p class="note">
+                    Formula: Remaining Budget = Income − Total Expenses
+                </p>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- FOOTER -->
+    <footer>
+        Budget Calculator | Case Study Project © 2026
+    </footer>
+
+
+    <!-- External JavaScript -->
+    <script src="budget.js"></script>
+
+</body>
+
+</html>

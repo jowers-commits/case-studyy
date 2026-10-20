@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scientific Notation - CalcWise</title>
+    <link rel="stylesheet" href="study.css">
+</head>
+
+<body>
+
+<header>
+    <div class="logo">
+        <img src="calc.jpg" alt="CalcWise Logo" class="logo-img">
+         CALCWISE</div>
+
+        <nav>
+        <a href="index.html">Home</a>
+        <a href="index.html">All Calculators</a>
+        <a href="#">About</a>
+    </nav>
+
+</header>
+
+<main>
+
+<a class="back" href="math.html">← Back to Mathematics and Science Calc</a>
+
+<section class="hero">
+    <h1>Scientific Notation</h1>
+    <p>Convert numbers to and from scientific notation.</p>
+</section>
+
+<section class="card">
+
+    <label>Conversion</label>
+
+    <select id="type" onchange="showFields()">
+        <option value="toScientific">Decimal to Scientific Notation</option>
+        <option value="toDecimal">Scientific Notation to Decimal</option>
+    </select>
+
+    <div id="fields"></div>
+
+    <button onclick="calculate()">Calculate</button>
+
+    <div class="result">
+        <div>Result</div>
+        <div class="value" id="result">--</div>
+    </div>
+
+</section>
+
+</main>
+
+<footer>
+    © 2026 CalcWise. All rights reserved.
+</footer>
+
+<script src="scientificnotation.js"></script>
+
+</body>
+</html>

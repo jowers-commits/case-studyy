@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Unit Converter</title>
+
+    
+    <link rel="stylesheet" href="study.css">
+</head>
+
+<body>
+
+    
+    <header>
+
+        <div class="logo">
+            <img src="calc.jpg" alt="CalcWise Logo" class="logo-img">
+            CALCWISE
+        </div>
+
+           <nav>
+        <a href="index.html">Home</a>
+        <a href="index.html">All Calculators</a>
+        <a href="#">About</a>
+    </nav>
+
+
+    </header>
+
+
+    <!-- MAIN CONTENT -->
+    <main>
+
+        <a class="back" href="math.html">← Back to Mathematics and Science Calc</a>
+
+
+        <!-- HERO -->
+        <section class="hero">
+
+            <h1>Unit Converter</h1>
+
+            <p>
+                Convert common units such as length, weight,
+                and temperature quickly and easily.
+            </p>
+
+        </section>
+
+
+        <!-- CONVERTER CARD -->
+        <section class="card">
+
+            <h2>Convert Units</h2>
+
+            <p>
+                Select a conversion type, enter a value,
+                and choose the units you want to convert.
+            </p>
+
+
+            <!-- CONVERSION TYPE -->
+            <label for="conversion">
+                Conversion Type
+            </label>
+
+            <select id="conversion">
+
+                <option value="length">
+                    Length
+                </option>
+
+                <option value="weight">
+                    Weight
+                </option>
+
+                <option value="temperature">
+                    Temperature
+                </option>
+
+            </select>
+
+
+            <!-- VALUE -->
+            <label for="value">
+                Value
+            </label>
+
+            <input
+                type="number"
+                id="value"
+                placeholder="Enter value"
+                step="any"
+            >
+
+
+            <!-- FROM AND TO -->
+            <div class="row">
+
+                <div>
+
+                    <label for="fromUnit">
+                        From
+                    </label>
+
+                    <select id="fromUnit"></select>
+
+                </div>
+
+
+                <div>
+
+                    <label for="toUnit">
+                        To
+                    </label>
+
+                    <select id="toUnit"></select>
+
+                </div>
+
+            </div>
+
+
+            <!-- BUTTON -->
+            <button id="convertBtn">
+                Convert
+            </button>
+
+
+            <!-- RESULT -->
+            <div class="result">
+
+                <p>Converted Value</p>
+
+                <div class="value" id="result">
+                    0.00
+                </div>
+
+                <p class="note" id="formula">
+                    Select a conversion type to begin.
+                </p>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- FOOTER -->
+    <footer>
+        Unit Converter | Case Study Project © 2026
+    </footer>
+
+
+    <!-- External JavaScript -->
+    <script src="unit.js"></script>
+
+</body>
+
+</html>

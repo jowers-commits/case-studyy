@@ -1,0 +1,320 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>CALCWISE - Home</title>
+
+    <link rel="stylesheet" href="study.css">
+</head>
+
+<body>
+
+    <header>
+        <div class="logo">
+            <img src="calc.jpg" alt="CalcWise Logo" class="logo-img">
+            <span>CALCWISE</span>
+        </div>
+
+        <button class="menu-toggle" onclick="toggleMenu()" aria-label="Toggle navigation" aria-expanded="false">
+            ☰
+        </button>
+
+        <nav id="mainNav">
+            <a href="index.html">Home</a>
+            <a href="#calculators">Calculators</a>
+            <a href="IT.html">IT Calc</a>
+            <a href="math.html">Mathematics and Science Calc</a>
+            <a href="money.html">Money Calc</a>
+            <a href="sports.html">Sports and Fitness Calc</a>
+            <a href="#about">About</a>
+            <a href="login.html">Logout</a>
+        </nav>
+    </header>
+
+    <main>
+
+        <!-- Hero Section -->
+        <section class="home-hero">
+            <div class="hero-content">
+                <p class="welcome-label">CALCULATOR COLLECTION</p>
+
+                <h1>Choose a Calculator</h1>
+
+                <p>
+                    Select a calculator below to get started.
+                    Find the right tool for your calculations.
+                </p>
+            </div>
+
+            <div class="hero-icon">🧮</div>
+        </section>
+
+        <!-- Calculator Collection -->
+        <section id="calculators">
+
+            <div class="section-title">
+                <div>
+                    <p>CALCULATOR COLLECTION</p>
+                    <h2>Choose a Calculator</h2>
+                </div>
+
+                <span id="calculatorCount">6 Calculators</span>
+            </div>
+
+            <!-- Working Search Bar -->
+            <div class="calculator-search">
+                <label for="calculatorSearch">Search Calculator</label>
+
+                <span class="search-icon">🔍</span>
+
+                <input
+                    type="search"
+                    id="calculatorSearch"
+                    placeholder="Search calculators... e.g. Area, Speed, Ohm's Law"
+                    autocomplete="off"
+                    aria-label="Search calculators"
+                >
+            </div>
+
+            <!-- Calculator Cards -->
+            <div class="calculator-grid">
+
+                <!-- Area Calculator -->
+                <a href="Area.html" class="calculator-card">
+                    <div class="card-icon">📐</div>
+
+                    <h3>Area Calculator</h3>
+
+                    <p>
+                        Calculate the area of different shapes.
+                    </p>
+
+                    <span class="card-action">Open Calculator →</span>
+                </a>
+
+                <!-- Ohm's Law Calculator -->
+                <a href="Ohms_law.html" class="calculator-card">
+                    <div class="card-icon">⚡</div>
+
+                    <h3>Ohm's Law Calculator</h3>
+
+                    <p>
+                        Calculate voltage, current, or resistance.
+                    </p>
+
+                    <span class="card-action">Open Calculator →</span>
+                </a>
+
+                <!-- Pythagorean Calculator -->
+                <a href="Pythagorean.html" class="calculator-card">
+                    <div class="card-icon">📐</div>
+
+                    <h3>Pythagorean Theorem</h3>
+
+                    <p>
+                        Calculate the missing side of a right triangle.
+                    </p>
+
+                    <span class="card-action">Open Calculator →</span>
+                </a>
+
+                <!-- Scientific Calculator -->
+                <a href="scientific_calculator.html" class="calculator-card">
+                    <div class="card-icon">🔢</div>
+
+                    <h3>Scientific Calculator</h3>
+
+                    <p>
+                        Perform basic and scientific calculations.
+                    </p>
+
+                    <span class="card-action">Open Calculator →</span>
+                </a>
+
+                <!-- Scientific Notation Calculator -->
+                <a href="Scientificnotation.html" class="calculator-card">
+                    <div class="card-icon">🔢</div>
+
+                    <h3>Scientific Notation</h3>
+
+                    <p>
+                        Convert numbers into scientific notation.
+                    </p>
+
+                    <span class="card-action">Open Calculator →</span>
+                </a>
+
+                <!-- Speed Calculator -->
+                <a href="speed.html" class="calculator-card">
+                    <div class="card-icon">⚡</div>
+
+                    <h3>Speed Calculator</h3>
+
+                    <p>
+                        Calculate speed, distance, and travel time.
+                    </p>
+
+                    <span class="card-action">Open Calculator →</span>
+                </a>
+
+            </div>
+
+            <!-- No Search Results Message -->
+            <div id="noResults" hidden>
+                <h3>No calculators found.</h3>
+                <p>Try another keyword or calculator name.</p>
+            </div>
+
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="about-section">
+            <h2>ABOUT CALCWISE</h2>
+
+            <p>
+                CALCWISE is a web-based calculator platform designed
+                to provide fast, simple, and useful calculations in
+                one convenient place.
+            </p>
+
+            <p>
+                It offers different calculators for Mathematics,
+                Science, Finance, Health, IT, and everyday calculations,
+                helping users solve problems without needing to
+                manually perform complex computations.
+            </p>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2026 CALCWISE | Simple Calculators &amp; Useful Tools</p>
+
+        <div class="footer-logos">
+    <img src="it.jpeg" width="40" alt="IT">
+    <img src="math.png" width="40" alt="Mathematics">
+    <img src="math.png" width="40" alt="Money">
+    <img src="science.jpeg" width="40" alt="Science">
+    <img src="science.jpeg" width="40" alt="Sports">
+</div>
+    </footer>
+
+    
+<script>
+function toggleMenu() {
+    var nav = document.getElementById("mainNav");
+    var button = document.querySelector(".menu-toggle");
+
+    nav.classList.toggle("active");
+
+    button.setAttribute(
+        "aria-expanded",
+        nav.classList.contains("active")
+    );
+}
+
+document.addEventListener("DOMContentLoaded", function () {
+    var searchInput = document.getElementById("calculatorSearch");
+    var calculatorCards = document.querySelectorAll(".calculator-card");
+    var calculatorCount = document.getElementById("calculatorCount");
+    var noResults = document.getElementById("noResults");
+    var navLinks = document.querySelectorAll("#mainNav a");
+
+    var categoryLinks = [
+        { name: "IT Calc", url: "IT.html" },
+        { name: "Mathematics and Science Calc", url: "math.html" },
+        { name: "Money Calc", url: "money.html" },
+        { name: "Sports and Fitness Calc", url: "sports.html" }
+    ];
+
+    var categoryResults = document.createElement("div");
+    categoryResults.id = "categoryResults";
+    categoryResults.className = "calculator-grid";
+
+    var categoryHeading = document.createElement("h3");
+    categoryHeading.id = "categoryHeading";
+    categoryHeading.textContent = "Calculator Categories";
+
+    var calculatorSection = document.getElementById("calculators");
+    calculatorSection.appendChild(categoryHeading);
+    calculatorSection.appendChild(categoryResults);
+
+    function filterCalculators() {
+        var keyword = searchInput.value.trim().toLowerCase();
+        var visibleCards = 0;
+        var visibleCategories = 0;
+
+        calculatorCards.forEach(function (card) {
+            var matches = card.textContent.toLowerCase().includes(keyword);
+
+            card.hidden = !matches;
+
+            if (matches) {
+                visibleCards++;
+            }
+        });
+
+        categoryResults.innerHTML = "";
+
+        categoryLinks.forEach(function (category) {
+            if (category.name.toLowerCase().includes(keyword)) {
+                var link = document.createElement("a");
+                link.href = category.url;
+                link.className = "calculator-card";
+
+                var heading = document.createElement("h3");
+                heading.textContent = category.name;
+
+                var description = document.createElement("p");
+                description.textContent =
+                    "Browse calculators in " + category.name + ".";
+
+                var action = document.createElement("span");
+                action.className = "card-action";
+                action.textContent = "View Calculators →";
+
+                link.appendChild(heading);
+                link.appendChild(description);
+                link.appendChild(action);
+
+                categoryResults.appendChild(link);
+                visibleCategories++;
+            }
+        });
+
+        categoryHeading.hidden =
+            keyword === "" || visibleCategories === 0;
+
+        categoryResults.hidden =
+            keyword === "" || visibleCategories === 0;
+
+        calculatorCount.textContent =
+            (visibleCards + visibleCategories) +
+            ((visibleCards + visibleCategories) === 1
+                ? " Result"
+                : " Results");
+
+        noResults.hidden =
+            keyword === "" ||
+            (visibleCards + visibleCategories) > 0;
+    }
+
+    searchInput.addEventListener("input", filterCalculators);
+
+    navLinks.forEach(function (link) {
+        link.addEventListener("click", function () {
+            document.getElementById("mainNav").classList.remove("active");
+            document.querySelector(".menu-toggle")
+                .setAttribute("aria-expanded", "false");
+        });
+    });
+});
+</script>
+
+
+</body>
+</html>

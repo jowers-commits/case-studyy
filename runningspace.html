@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Running Pace</title>
+
+  <link rel="stylesheet" href="study.css">
+</head>
+
+<body>
+
+<header>
+  <div class="logo">
+      <img src="calc.jpg" alt="CalcWise Logo" class="logo-img">
+      CALCWISE
+  </div>
+
+            <nav>
+        <a href="index.html">Home</a>
+        <a href="index.html">All Calculators</a>
+        <a href="#">About</a>
+    </nav>
+
+
+    </header>
+
+    <main>
+
+        <a class="back" href="sports.html">← Back to Sports Calc</a>
+        
+  <div class="hero">
+    <h1>Running Pace Calculator</h1>
+    <p>Calculate your running pace using distance and time.</p>
+  </div>
+
+  <div class="card">
+
+    <div class="row">
+
+      <div>
+        <label>Distance (km)</label>
+        <input type="number" id="distance" placeholder="Enter distance">
+      </div>
+
+      <div>
+        <label>Time (minutes)</label>
+        <input type="number" id="time" placeholder="Enter time">
+      </div>
+
+    </div>
+
+    <button onclick="calculatePace()">Calculate Pace</button>
+
+    <div class="result">
+      <div>Running Pace</div>
+      <div class="value" id="result">-- min/km</div>
+      <div class="note">Based on your distance and time.</div>
+    </div>
+
+  </div>
+
+</main>
+
+<footer>
+  Running Pace Calculator
+</footer>
+
+<script src="running.js"></script>
+
+</body>
+</html>

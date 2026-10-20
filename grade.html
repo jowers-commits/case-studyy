@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NEUST CALCWISE</title>
+<link rel="stylesheet" href="study.css">
+   
+     
+     <nav>
+        <a href="index.html">Home</a>
+        <a href="index.html">All Calculators</a>
+        <a href="#">About</a>
+    </nav>
+</head>
+
+<body>
+<header>
+    <div class="logo">
+        <img src="calc.jpg" alt="CalcWise Logo" class="logo-img">
+         CALCWISE</div>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="index.html">All Calculators</a>
+        <a href="#">About</a>
+    </nav>
+</header>
+
+<main>
+
+<a class="back" href="IT.html">← Back to IT CALC</a>
+
+
+
+
+ <div class="card">
+ <h2>Add Subject</h2>
+ <div class="form-row">
+ <input type="text" id="subject" placeholder="Subject Name - Ex: Programming 1">
+ <input type="number" id="midterm" placeholder="Midterm 0-100" min="0" max="100">
+ <input type="number" id="final" placeholder="Final 0-100" min="0" max="100">
+ </div>
+ <button onclick="addSubject()">+ Add Subject</button>
+ <button class="btn-clear" onclick="clearAll()">Clear All</button>
+ 
+
+ </div>
+ </div>
+
+ <div class="card">
+ <h2>Subject Results</h2>
+ <div style="overflow-x:auto;">
+ <table id="resultTable">
+ <thead>
+ <tr>
+ <th>Subject</th>
+ <th>Midterm</th>
+ <th>Final</th>
+ <th>Average</th>
+ <th>Equivalent</th>
+ <th>Status</th>
+ <th>Action</th>
+ </tr>
+ </thead>
+ <tbody>
+ <tr><td colspan="7">No subjects added yet.</td></tr>
+ </tbody>
+ </table>
+ </div>
+
+ <h2>Overall Summary</h2>
+ <div class="summary">
+ <div class="summary-box">
+ <h3>Total Subjects</h3>
+ <p id="totalSubjects">0</p>
+ </div>
+ <div class="summary-box">
+ <h3>Overall Average</h3>
+ <p id="overallAverage">0.00%</p>
+ </div>
+ <div class="summary-box">
+ <h3>Subjects Passed</h3>
+ <p id="subjectsPassed">0</p>
+ </div>
+ </div>
+ </div>
+</main>
+
+<script>
+// GLOBAL VARIABLES
+let subjects = [];
+const PASSING = 70; // NEUST College Passing Rate = 3.00
+
+// CONVERT TO NEUST 1.00 - 5.00 SCALE
+function getEquivalent(avg) {
+ if (avg >= 97) return 1.00;
+ if (avg >= 94) return 1.25;
+ if (avg >= 91) return 1.50;
+ if (avg >= 88) return 1.75;
+ if (avg >= 85) return 2.00;
+ if (avg >= 82) return 2.25;
+ if (avg >= 79) return 2.50;
+ if (avg >= 76) return 2.75;
+ if (avg >= 70) return 3.00; // 70-74 = 3.00 PASSED
+ return 5.00; // Below 70 = 5.00 FAILED
+}
+
+// ADD SUBJECT FUNCTION
+function addSubject() {
+ let subName = document.getElementById("subject").value.trim();
+ let mid = parseFloat(document.getElementById("midterm").value);
+ let fin = parseFloat(document.getElementById("final").value);
+
+ if (subName === "") { alert("Please enter Subject Name"); return; }
+ if (isNaN(mid) || isNaN(fin)) { alert("Please enter Midterm and Final grades"); return; }
+ if (mid < 0 || mid > 100 || fin < 0 || fin > 100) { alert("Grades must be between 0 - 100"); return; }
+
+ // COMPUTATION: NO PRELIM
+ let average = (mid + fin) / 2;
+ let status = average >= PASSING ? "PASSED" : "FAILED";
+ let equivalent = getEquivalent(average);
+
+ subjects.push({ subject: subName, midterm: mid, final: fin, average: average, equivalent: equivalent, status: status });
+ renderTable();
+
+ document.getElementById("subject").value = "";
+ document.getElementById("midterm").value = "";
+ document.getElementById("final").value = "";
+}
+
+// RENDER TABLE + SUMMARY
+function renderTable() {
+ let tbody = document.querySelector("#resultTable tbody");
+ tbody.innerHTML = "";
+
+ if (subjects.length === 0) {
+ tbody.innerHTML = `<tr><td colspan="7">No subjects added yet.</td></tr>`;
+ updateSummary();
+ return;
+ }
+
+ let totalAvg = 0;
+ let passCount = 0;
+
+ subjects.forEach((item, index) => {
+ totalAvg += item.average;
+ if (item.status === "PASSED") passCount++;
+
+ tbody.innerHTML += `
+ <tr>
+ <td>${item.subject}</td>
+ <td>${item.midterm.toFixed(2)}</td>
+ <td>${item.final.toFixed(2)}</td>
+ <td><b>${item.average.toFixed(2)}%</b></td>
+ <td>${item.equivalent.toFixed(2)}</td>
+ <td class="${item.status === 'PASSED' ? 'passed' : 'failed'}">${item.status}</td>
+ <td><button class="btn-remove" onclick="removeSubject(${index})">Remove</button></td>
+ </tr>
+ `;
+ });
+
+ updateSummary(totalAvg, passCount);
+}
+
+// UPDATE SUMMARY
+function updateSummary(totalAvg = 0, passCount = 0) {
+ document.getElementById("totalSubjects").innerText = subjects.length;
+ document.getElementById("overallAverage").innerText = subjects.length > 0 ? (totalAvg / subjects.length).toFixed(2) + "%" : "0.00%";
+ document.getElementById("subjectsPassed").innerText = passCount;
+}
+
+// REMOVE SUBJECT
+function removeSubject(index) {
+ subjects.splice(index, 1);
+ renderTable();
+}
+
+// CLEAR ALL
+function clearAll() {
+ subjects = [];
+ renderTable();
+ document.getElementById("subject").value = "";
+ document.getElementById("midterm").value = "";
+ document.getElementById("final").value = "";
+}
+</script>
+
+</body>
+</html>

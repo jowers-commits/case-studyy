@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>GPA Calculator</title>
+
+    
+    <link rel="stylesheet" href="study.css">
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header>
+
+        <div class="logo">
+            <img src="calc.jpg" alt="CalcWise Logo" class="logo-img">
+            CALCWISE
+        </div>
+
+            <nav>
+        <a href="index.html">Home</a>
+        <a href="index.html">All Calculators</a>
+        <a href="#">About</a>
+    </nav>
+
+
+    </header>
+
+
+    <!-- MAIN CONTENT -->
+    <main>
+
+        <a class="back" href="IT.html">← Back to IT CALC</a>
+
+
+        <!-- HERO -->
+        <section class="hero">
+
+            <h1>GPA Calculator</h1>
+
+            <p>
+                Calculate your average GPA by entering your subjects
+                and corresponding grades.
+            </p>
+
+        </section>
+
+
+        <!-- CALCULATOR CARD -->
+        <section class="card">
+
+            <h2>Enter Your Grades</h2>
+
+            <p>
+                Enter your subjects and grades below to calculate
+                your average GPA.
+            </p>
+
+
+            <!-- SUBJECT 1 -->
+            <div class="row">
+
+                <div>
+                    <label for="subject1">
+                        Subject 1
+                    </label>
+
+                    <input
+                        type="text"
+                        id="subject1"
+                        placeholder="Enter subject"
+                    >
+                </div>
+
+                <div>
+                    <label for="grade1">
+                        Grade
+                    </label>
+
+                    <input
+                        type="number"
+                        id="grade1"
+                        placeholder="Enter grade"
+                        min="0"
+                        step="0.01"
+                    >
+                </div>
+
+            </div>
+
+
+            <!-- SUBJECT 2 -->
+            <div class="row">
+
+                <div>
+                    <label for="subject2">
+                        Subject 2
+                    </label>
+
+                    <input
+                        type="text"
+                        id="subject2"
+                        placeholder="Enter subject"
+                    >
+                </div>
+
+                <div>
+                    <label for="grade2">
+                        Grade
+                    </label>
+
+                    <input
+                        type="number"
+                        id="grade2"
+                        placeholder="Enter grade"
+                        min="0"
+                        step="0.01"
+                    >
+                </div>
+
+            </div>
+
+
+            <!-- SUBJECT 3 -->
+            <div class="row">
+
+                <div>
+                    <label for="subject3">
+                        Subject 3
+                    </label>
+
+                    <input
+                        type="text"
+                        id="subject3"
+                        placeholder="Enter subject"
+                    >
+                </div>
+
+                <div>
+                    <label for="grade3">
+                        Grade
+                    </label>
+
+                    <input
+                        type="number"
+                        id="grade3"
+                        placeholder="Enter grade"
+                        min="0"
+                        step="0.01"
+                    >
+                </div>
+
+            </div>
+
+
+            <!-- SUBJECT 4 -->
+            <div class="row">
+
+                <div>
+                    <label for="subject4">
+                        Subject 4
+                    </label>
+
+                    <input
+                        type="text"
+                        id="subject4"
+                        placeholder="Enter subject"
+                    >
+                </div>
+
+                <div>
+                    <label for="grade4">
+                        Grade
+                    </label>
+
+                    <input
+                        type="number"
+                        id="grade4"
+                        placeholder="Enter grade"
+                        min="0"
+                        step="0.01"
+                    >
+                </div>
+
+            </div>
+
+
+            <!-- CALCULATE BUTTON -->
+            <button id="calculateBtn">
+                Calculate GPA
+            </button>
+
+
+            <!-- RESULT -->
+            <div class="result">
+
+                <p>Average GPA</p>
+
+                <div class="value" id="gpa">
+                    0.00
+                </div>
+
+                <p class="note">
+                    Formula: GPA = Total Grades ÷ Number of Subjects
+                </p>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- FOOTER -->
+    <footer>
+        GPA Calculator | Case Study Project © 2026
+    </footer>
+
+
+    <!-- External JavaScript -->
+    <script src="gpa.js"></script>
+
+</body>
+
+</html>

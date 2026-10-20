@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loan Payment Calculator</title>
+    <link rel="stylesheet" href="study.css">
+</head>
+
+<body>
+
+<header>
+    <div class="logo">
+        <img src="calc.jpg" alt="CalcWise Logo" class="logo-img">
+        Calculator</div>
+
+        <nav>
+        <a href="index.html">Home</a>
+        <a href="index.html">All Calculators</a>
+        <a href="#">About</a>
+    </nav>
+
+</header>
+
+<main>
+
+    <a class="back" href="money.html">← Back to About Money</a>
+
+    <section class="hero">
+        <h1>Loan Payment Calculator</h1>
+        <p>Calculate your estimated monthly loan payment.</p>
+    </section>
+
+    <section class="card">
+
+        <label>Loan Amount</label>
+        <input type="number" id="loan" placeholder="Enter loan amount">
+
+        <div class="row">
+
+            <div>
+                <label>Annual Interest Rate (%)</label>
+                <input type="number" id="rate" placeholder="Enter rate">
+            </div>
+
+            <div>
+                <label>Loan Term (Months)</label>
+                <input type="number" id="months" placeholder="Enter months">
+            </div>
+
+        </div>
+
+        <button onclick="calculateLoan()">Calculate Payment</button>
+
+        <div class="result">
+            <div>Monthly Payment</div>
+            <div class="value" id="result">₱0.00</div>
+            <div class="note">Estimated monthly loan payment.</div>
+        </div>
+
+    </section>
+
+</main>
+
+<footer>
+    Loan Payment Calculator
+</footer>
+
+<script src="loan.js"></script>
+
+</body>
+</html>

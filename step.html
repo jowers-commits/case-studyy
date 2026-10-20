@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Step to Distance Calculator</title>
+<link rel="stylesheet" href="study.css">
+</head>
+<body>
+
+<header>
+    <div class="logo">
+        <img src="calc.jpg" alt="CalcWise Logo" class="logo-img">
+         CALCWISE</div>
+
+        <nav>
+        <a href="index.html">Home</a>
+        <a href="index.html">All Calculators</a>
+        <a href="#">About</a>
+    </nav>
+
+</header>
+
+<main>
+
+
+<a class="back" href="sports.html">← Back to Sports Calc</a>
+  
+  <label>Steps</label>
+  <input type="number" id="steps" placeholder="Ex: 5000">
+
+  <label>Height (cm)</label>
+  <input type="number" id="height" placeholder="Ex: 165">
+
+  <label>Gender (affects stride)</label>
+  <select id="gender">
+    <option value="0.415">Male</option>
+    <option value="0.413">Female</option>
+  </select>
+
+  <button onclick="calculateDistance()">Calculate Distance</button>
+
+  <div id="result">0 km</div>
+  <p id="details" style="text-align:center; font-size:13px; color:#666;"></p>
+</div>
+
+<script src="step.js"></script>
+</body>
+</html>

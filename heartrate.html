@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Heart Rate Calculator - CALCWISE</title>
+  <link rel="stylesheet" href="study.css">
+</head>
+<body>
+
+<header>
+  <div class="logo"><img src="calc.jpg" alt="logo" style="width:35px;height:35px;object-fit:contain;"> CALCWISE
+  </div>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="index.html">All Calculators</a>
+        <a href="#">About</a>
+    </nav>
+
+</header>
+
+<main>
+  <a class="back" href="sports.html">← Back to Sports Calc</a>
+  <div class="hero">
+    <h1> Heart Rate Calculator</h1>
+    <p>Know your max heart rate and target zones for workout.</p>
+  </div>
+
+  <div class="card">
+    <label>Age</label>
+    <input type="number" id="age" placeholder="e.g. 20" max="120">
+
+    <div class="row">
+      <div>
+        <label>Resting Heart Rate (optional)</label>
+        <input type="number" id="resting" placeholder="e.g. 70">
+      </div>
+      <div>
+        <label>Formula</label>
+        <select id="method">
+          <option value="220">Standard: 220 - Age</option>
+          <option value="208">Accurate: 208 - (0.7 x Age)</option>
+        </select>
+      </div>
+    </div>
+
+    <button type="button" id="calcBtn">Calculate</button>
+
+    <div id="result" class="result" style="display:none;">
+      <p>Your Max Heart Rate is</p>
+      <div class="value" id="maxHR">-- bpm</div>
+      <div style="text-align:left; margin-top:20px;">
+        <p><b>Target Zones:</b></p>
+        <p>🟢 Warm Up (50-60%): <span id="zone1">--</span> bpm</p>
+        <p>🟡 Fat Burn (60-70%): <span id="zone2">--</span> bpm</p>
+        <p>🟠 Cardio (70-80%): <span id="zone3">--</span> bpm</p>
+        <p>🔴 Peak (80-90%): <span id="zone4">--</span> bpm</p>
+      </div>
+      <p class="note" id="note"></p>
+    </div>
+  </div>
+</main>
+
+<script src="rate.js"></script>
+
+</body>
+</html>

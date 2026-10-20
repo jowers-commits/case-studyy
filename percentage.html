@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Percentage Calculator</title>
+
+    <link rel="stylesheet" href="study.css">
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header>
+
+        <div class="logo">
+            <img src="calc.jpg" alt="CalcWise Logo" class="logo-img">
+            CALCWISE
+        </div>
+
+            <nav>
+        <a href="index.html">Home</a>
+        <a href="index.html">All Calculators</a>
+        <a href="#">About</a>
+    </nav>
+
+
+    </header>
+
+
+    <!-- MAIN CONTENT -->
+    <main>
+
+        <a class="back" href="math.html">← Back to Mathematics and Science Calc</a>
+
+
+        <!-- HERO -->
+        <section class="hero">
+
+            <h1>Percentage Calculator</h1>
+
+            <p>
+                Calculate the percentage of a given number quickly and easily.
+            </p>
+
+        </section>
+
+
+        <!-- CARD -->
+        <section class="card">
+
+            <h2>Calculate Percentage</h2>
+
+            <label for="percentage">
+                Percentage (%)
+            </label>
+
+            <input
+                type="number"
+                id="percentage"
+                placeholder="Enter percentage"
+            >
+
+
+            <label for="number">
+                Number
+            </label>
+
+            <input
+                type="number"
+                id="number"
+                placeholder="Enter number"
+            >
+
+
+            <button onclick="calculatePercentage()">
+                Calculate
+            </button>
+
+
+            <!-- RESULT -->
+            <div class="result">
+
+                <p>Result</p>
+
+                <div class="value" id="result">
+                    0.00
+                </div>
+
+                <p class="note">
+                    Enter a percentage and a number to calculate.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- FOOTER -->
+        <footer>
+            Percentage Calculator
+        </footer>
+
+    </main>
+
+
+    <!-- JAVASCRIPT -->
+    <script src="percentage.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Study Time Calculator - CalcWise</title>
+    <link rel="stylesheet" href="study.css">
+</head>
+
+<body>
+
+<header>
+    <div class="logo">
+        <img src="calc.jpg" alt="CalcWise Logo" class="logo-img">
+         CALCWISE</div>
+
+        <nav>
+        <a href="index.html">Home</a>
+        <a href="index.html">All Calculators</a>
+        <a href="#">About</a>
+    </nav>
+
+</header>
+
+<main>
+
+<a class="back" href="IT.html">← Back to IT CALC</a>
+
+<section class="hero">
+    <h1>Study Time Calculator</h1>
+    <p>Calculate your study time per subject.</p>
+</section>
+
+<section class="card">
+
+    <label>Total Study Time (minutes)</label>
+    <input type="number" id="totalTime"
+           placeholder="Example: 120">
+
+    <label>Number of Subjects</label>
+    <input type="number" id="subjects"
+           placeholder="Example: 4">
+
+    <label>Break per Subject (minutes)</label>
+    <input type="number" id="breakTime"
+           placeholder="Example: 10">
+
+    <button onclick="calculateStudyTime()">Calculate</button>
+
+    <div class="result">
+        <div>Study Time per Subject</div>
+
+        <div class="value" id="result">
+            --
+        </div>
+
+        <p id="totalSession"></p>
+    </div>
+
+</section>
+
+</main>
+
+<footer>
+    © 2026 CalcWise. All rights reserved.
+</footer>
+
+<script src="studytime.js"></script>
+
+</body>
+</html>

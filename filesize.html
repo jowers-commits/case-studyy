@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>File Size Converter</title>
+
+    <link rel="stylesheet" href="study.css">
+</head>
+
+<body>
+
+<header>
+
+    <div class="logo">
+        <span class="logo-icon">
+            <img src="calc.jpg" alt="CalcWise Logo" class="logo-img">
+        </span>
+        CALCWISE
+    </div>
+
+        <nav>
+        <a href="index.html">Home</a>
+        <a href="index.html">All Calculators</a>
+        <a href="#">About</a>
+    </nav>
+
+
+</header>
+
+
+<main>
+
+    <a class="back" href="IT.html">← Back to IT CALC</a>
+
+    <section class="hero">
+
+        <h1>File Size Converter</h1>
+
+        <p>
+            Convert file sizes between bytes, kilobytes, megabytes,
+            gigabytes, terabytes, and more.
+        </p>
+
+    </section>
+
+
+    <section class="card" id="calculator">
+
+        <form id="converterForm">
+
+            <label for="amount">
+                File Size
+            </label>
+
+            <input
+                type="number"
+                id="amount"
+                placeholder="Enter file size"
+                min="0"
+                step="any"
+                required
+            >
+
+
+            <div class="row">
+
+                <div>
+
+                    <label for="fromUnit">
+                        From
+                    </label>
+
+                    <select id="fromUnit">
+
+                        <option value="bit">
+                            Bits (b)
+                        </option>
+
+                        <option value="byte">
+                            Bytes (B)
+                        </option>
+
+                        <option value="KB">
+                            Kilobytes (KB)
+                        </option>
+
+                        <option value="MB">
+                            Megabytes (MB)
+                        </option>
+
+                        <option value="GB">
+                            Gigabytes (GB)
+                        </option>
+
+                        <option value="TB">
+                            Terabytes (TB)
+                        </option>
+
+                        <option value="PB">
+                            Petabytes (PB)
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <div>
+
+                    <label for="toUnit">
+                        To
+                    </label>
+
+                    <select id="toUnit">
+
+                        <option value="byte">
+                            Bytes (B)
+                        </option>
+
+                        <option value="KB">
+                            Kilobytes (KB)
+                        </option>
+
+                        <option value="MB">
+                            Megabytes (MB)
+                        </option>
+
+                        <option value="GB">
+                            Gigabytes (GB)
+                        </option>
+
+                        <option value="TB">
+                            Terabytes (TB)
+                        </option>
+
+                        <option value="PB">
+                            Petabytes (PB)
+                        </option>
+
+                        <option value="bit">
+                            Bits (b)
+                        </option>
+
+                    </select>
+
+                </div>
+
+            </div>
+
+
+            <button type="submit">
+                Convert File Size
+            </button>
+
+        </form>
+
+
+        <div
+            class="result"
+            id="result"
+            style="display: none;"
+        >
+
+            <div class="result-title">
+                Converted Size
+            </div>
+
+            <div
+                class="value"
+                id="resultValue"
+            >
+                0
+            </div>
+
+            <div
+                class="note"
+                id="formula"
+            >
+                Conversion
+            </div>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+<footer>
+    File Size Converter
+</footer>
+
+
+<script src ="file.js"></script>
+
+</body>
+
+</html>

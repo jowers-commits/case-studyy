@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Savings Calculator</title>
+    <link rel="stylesheet" href="study.css">
+</head>
+
+<body>
+
+<header>
+    <div class="logo">
+        <img src="calc.jpg" alt="CalcWise Logo" class="logo-img">
+        Calculator</div>
+
+        <nav>
+        <a href="index.html">Home</a>
+        <a href="index.html">All Calculators</a>
+        <a href="#">About</a>
+    </nav>
+
+</header>
+
+<main>
+
+    <a class="back" href="money.html">← Back to About Money</a>
+
+    <section class="hero">
+        <h1>Savings Calculator</h1>
+        <p>Calculate your total savings based on your daily or monthly savings.</p>
+    </section>
+
+    <section class="card">
+
+        <div class="row">
+
+            <div>
+                <label>Saving Amount</label>
+                <input type="number" id="amount" placeholder="Enter amount">
+            </div>
+
+            <div>
+                <label>Period</label>
+                <select id="period">
+                    <option value="day">Per Day</option>
+                    <option value="month">Per Month</option>
+                </select>
+            </div>
+
+        </div>
+
+        <label>Number of Days / Months</label>
+        <input type="number" id="number" placeholder="Enter number">
+
+        <button onclick="calculateSavings()">Calculate Savings</button>
+
+        <div class="result">
+            <div>Total Savings</div>
+            <div class="value" id="result">₱0.00</div>
+            <div class="note">Your estimated total savings.</div>
+        </div>
+
+    </section>
+
+</main>
+
+<footer>
+    Savings Calculator
+</footer>
+
+<script src="saving.js"></script>
+
+</body>
+</html>

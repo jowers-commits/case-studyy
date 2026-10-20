@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Time Calculator</title>
+    <link rel="stylesheet" href="study.css">
+</head>
+<body>
+
+    
+<header>
+
+    <div class="logo">
+        <img src="calc.jpg" alt="CalcWise Logo" class="logo-img">
+     CALCWISE</div>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="index.html">All Calculators</a>
+        <a href="#">About</a>
+    </nav>
+
+</header>
+
+<main>
+
+    <a class="back" href="sports.html">← Back to Sports Calc</a>
+    
+    <div class="calculator-box">
+        <label for="startTime">Start Time:</label>
+        <input type="time" id="startTime">
+
+        <br><br>
+
+        <label for="endTime">End Time:</label>
+        <input type="time" id="endTime">
+
+        <br><br>
+
+        <button onclick="calculateDuration()">Calculate</button>
+
+        <div id="result"></div>
+    </div>
+
+    <!-- Ito ang nagkokonekta sa JS file mo -->
+    <script src="time.js"></script>
+
+</body>
+</html>

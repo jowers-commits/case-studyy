@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calories Burned Estimator - Calcwise</title>
+    <link rel="stylesheet" href="study.css">
+</head>
+<style>
+
+</style>
+<body>
+
+<header>
+    <div class="logo">
+        <img src="calc.jpg" alt="CalcWise Logo" class="logo-img">
+   CALCWISE</div>
+
+        <nav>
+        <a href="index.html">Home</a>
+        <a href="index.html">All Calculators</a>
+        <a href="#">About</a>
+    </nav>
+
+</header>
+
+<main>
+
+<a class="back" href="sports.html">← Back to Sports Calc</a>
+
+<section class="hero">
+    <h1>Calories Burned Estimator</h1>
+    <p>Estimate calories using activity, duration, and weight.</p>
+</section>
+
+<section class="card">
+
+    <label>Activity</label>
+
+    <select id="activity">
+        <option value="3.5">Walking</option>
+        <option value="7">Jogging</option>
+        <option value="8">Cycling</option>
+        <option value="6">Dancing</option>
+        <option value="5">Workout</option>
+    </select>
+
+    <label>Duration (minutes)</label>
+    <input type="number" id="duration">
+
+    <label>Weight (kg)</label>
+    <input type="number" id="weight">
+
+    <button onclick="calculate()">Estimate Calories</button>
+
+    <div class="result">
+        <div>Estimated Calories</div>
+        <div class="value" id="result">--</div>
+        <p>Estimate only.</p>
+    </div>
+
+</section>
+
+</main>
+
+<footer>© 2026 CalcHub. All rights reserved.</footer>
+
+<script>
+
+function calculate() {
+
+    let met = Number(document.getElementById("activity").value);
+    let duration = Number(document.getElementById("duration").value);
+    let weight = Number(document.getElementById("weight").value);
+
+    let calories = met * 3.5 * weight / 200 * duration;
+
+    document.getElementById("result").textContent =
+        Math.round(calories) + " kcal";
+}
+
+</script>
+
+</body>
+</html>

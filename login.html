@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Login - CALCWISE</title>
+
+    <link rel="stylesheet" href="study.css">
+</head>
+
+<body>
+
+    <div class="login-container">
+
+        <!-- Welcome Section -->
+        <section class="welcome-section">
+
+            <div class="login-logo">
+                <div class="logo-icon">🧮</div>
+                <span>CALC<span>WISE</span></span>
+            </div>
+
+            <h1>Welcome to CALCWISE!</h1>
+
+            <p class="welcome-text">
+                Your trusted calculator website for fast,
+                simple, and accurate calculations.
+            </p>
+
+            <div class="features">
+
+                <div class="feature">
+                    <div class="feature-icon">📐</div>
+                    <div>
+                        <h3>Easy Calculations</h3>
+                        <p>Calculate quickly and easily.</p>
+                    </div>
+                </div>
+
+                <div class="feature">
+                    <div class="feature-icon">⚡</div>
+                    <div>
+                        <h3>Fast and Convenient</h3>
+                        <p>Find the tools you need in one place.</p>
+                    </div>
+                </div>
+
+                <div class="feature">
+                    <div class="feature-icon">📚</div>
+                    <div>
+                        <h3>Different Categories</h3>
+                        <p>Explore Mathematics, Science, IT, and more.</p>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="calculator-icon">🧮</div>
+
+            <p class="quote">
+                "Making calculations simple for everyone."
+            </p>
+
+        </section>
+
+        <!-- Login Form -->
+        <section class="form-section">
+
+            <div class="form-box">
+
+                <div class="form-logo">
+                    <div class="logo-icon">🧮</div>
+                    <div>
+                        <h2>CALC<span>WISE</span></h2>
+                        <p>Simple Calculators & Useful Tools</p>
+                    </div>
+                </div>
+
+                <h1>Login</h1>
+
+                <p class="subtitle">
+                    Enter your details to continue.
+                </p>
+
+                <form id="loginForm">
+
+                    <label for="username">Username or Email</label>
+
+                    <div class="input-box">
+                        <span>👤</span>
+                        <input
+                            type="text"
+                            id="username"
+                            name="username"
+                            placeholder="Enter your username or email"
+                            autocomplete="username"
+                            required
+                        >
+                    </div>
+
+                    <label for="password">Password</label>
+
+                    <div class="input-box">
+                        <span>🔒</span>
+                        <input
+                            type="password"
+                            id="password"
+                            name="password"
+                            placeholder="Enter your password"
+                            autocomplete="current-password"
+                            required
+                        >
+                    </div>
+
+                    <div class="options">
+                        <label class="remember">
+                            <input type="checkbox" id="showPassword">
+                            Show password
+                        </label>
+                    </div>
+
+                    <p id="loginMessage" role="alert"
+                       style="color:#c0392b; font-size:13px;"
+                       hidden>
+                    </p>
+
+                    <button type="submit">Login</button>
+
+                </form>
+
+                <div class="or">
+                    <span></span>
+                    <p>Welcome to CALCWISE</p>
+                    <span></span>
+                </div>
+
+                <a href="index.html" class="create-account">
+                    Continue to Home
+                </a>
+
+                <a href="index.html" class="back-home">
+                    ← Back to Home
+                </a>
+
+            </div>
+
+        </section>
+
+    </div>
+
+    <script>
+        // Show or hide password
+        document.getElementById("showPassword")
+            .addEventListener("change", function () {
+
+                var passwordInput =
+                    document.getElementById("password");
+
+                passwordInput.type = this.checked
+                    ? "text"
+                    : "password";
+            });
+
+        // Login form
+        document.getElementById("loginForm")
+            .addEventListener("submit", function (event) {
+
+                event.preventDefault();
+
+                var username =
+                    document.getElementById("username")
+                    .value.trim();
+
+                var password =
+                    document.getElementById("password").value;
+
+                var message =
+                    document.getElementById("loginMessage");
+
+                if (username === "" || password === "") {
+                    message.textContent =
+                        "Please enter your username and password.";
+
+                    message.hidden = false;
+                    return;
+                }
+
+                // Redirect to homepage
+                window.location.href = "index.html";
+            });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,286 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Scientific Calculator - Calcora</title>
+
+<link rel="stylesheet" href="study.css">
+
+
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="calc.jpg" alt="CalcWise Logo" class="logo-img">
+CALCWISE
+</div>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="index.html">All Calculators</a>
+        <a href="#">About</a>
+    </nav>
+
+
+</header>
+<main>
+    <a class="back" href="math.html">← Back to Mathematics and Science Calc</a>
+
+
+<section class="hero">
+
+<h1>Scientific Calculator</h1>
+
+<p>
+Perform advanced mathematical calculations quickly and accurately.
+</p>
+
+</section>
+
+
+<section class="card scientific-calculator">
+
+
+<input
+type="text"
+id="display"
+class="calc-display"
+placeholder="0"
+readonly
+>
+
+
+<div class="calc-buttons">
+
+
+<button
+class="clear"
+onclick="clearDisplay()">
+AC
+</button>
+
+<button
+class="function"
+onclick="deleteLast()">
+DEL
+</button>
+
+<button
+class="function"
+onclick="appendValue('(')">
+(
+</button>
+
+<button
+class="function"
+onclick="appendValue(')')">
+)
+</button>
+
+<button
+class="operator"
+onclick="appendValue('/')">
+÷
+</button>
+
+
+<!-- ROW 2 -->
+
+<button
+class="function"
+onclick="appendValue('sin(')">
+sin
+</button>
+
+<button
+class="function"
+onclick="appendValue('cos(')">
+cos
+</button>
+
+<button
+class="function"
+onclick="appendValue('tan(')">
+tan
+</button>
+
+<button
+class="function"
+onclick="appendValue('√(')">
+√
+</button>
+
+<button
+class="operator"
+onclick="appendValue('*')">
+×
+</button>
+
+
+<!-- ROW 3 -->
+
+<button
+class="function"
+onclick="appendValue('log(')">
+log
+</button>
+
+<button
+class="function"
+onclick="appendValue('ln(')">
+ln
+</button>
+
+<button
+class="function"
+onclick="appendValue('π')">
+π
+</button>
+
+<button
+class="function"
+onclick="appendValue('e')">
+e
+</button>
+
+<button
+class="operator"
+onclick="appendValue('-')">
+−
+</button>
+
+
+<!-- ROW 4 -->
+
+<button
+onclick="appendValue('7')">
+7
+</button>
+
+<button
+onclick="appendValue('8')">
+8
+</button>
+
+<button
+onclick="appendValue('9')">
+9
+</button>
+
+<button
+class="function"
+onclick="squareNumber()">
+x²
+</button>
+
+<button
+class="operator"
+onclick="appendValue('+')">
++
+</button>
+
+
+<!-- ROW 5 -->
+
+<button
+onclick="appendValue('4')">
+4
+</button>
+
+<button
+onclick="appendValue('5')">
+5
+</button>
+
+<button
+onclick="appendValue('6')">
+6
+</button>
+
+<button
+class="function"
+onclick="appendValue('^')">
+xʸ
+</button>
+
+<button
+class="equals"
+onclick="calculate()">
+=
+</button>
+
+
+<!-- ROW 6 -->
+
+<button
+onclick="appendValue('1')">
+1
+</button>
+
+<button
+onclick="appendValue('2')">
+2
+</button>
+
+<button
+onclick="appendValue('3')">
+3
+</button>
+
+<button
+class="function"
+onclick="appendValue('.')">
+.
+</button>
+
+<button
+class="function"
+onclick="appendValue('%')">
+%
+</button>
+
+
+<!-- ROW 7 -->
+
+<button
+class="zero"
+onclick="appendValue('0')">
+0
+</button>
+
+<button
+class="function"
+onclick="appendValue('00')">
+00
+</button>
+
+<button
+class="equals"
+onclick="calculate()">
+=
+</button>
+
+</div>
+
+
+<!-- RESULT -->
+
+<div class="calc-result">
+
+<div class="calc-result-title">
+RESULT
+</div>
+
+<div
+class="calc-result-value"
+id="result">
+0
+</div>
+
+</div>
+
+</section>
+
+</main><footer>
+© 2026 Calcora | Simple Calculators & Useful Tools
+</footer><script src="java1.js"></script></body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ohm's Law - CalcWise</title>
+    <link rel="stylesheet" href="study.css">
+</head>
+
+<body>
+
+<header>
+    <div class="logo">
+        <img src="calc.jpg" alt="CalcWise Logo" class="logo-img">
+         CALCWISE</div>
+
+       <nav>
+        <a href="index.html">Home</a>
+        <a href="index.html">All Calculators</a>
+        <a href="#">About</a>
+    </nav>
+
+</header>
+
+<main>
+
+<a class="back" href="math.html">← Back to Mathematics and Science Calc</a>
+
+<section class="hero">
+    <h1>Ohm's Law Calculator</h1>
+    <p>Calculate voltage, current, or resistance.</p>
+</section>
+
+<section class="card">
+
+    <label>What do you want to calculate?</label>
+
+    <select id="calculateType" onchange="showFields()">
+        <option value="voltage">Voltage (V)</option>
+        <option value="current">Current (I)</option>
+        <option value="resistance">Resistance (R)</option>
+    </select>
+
+    <div id="fields"></div>
+
+    <button onclick="calculate()">Calculate</button>
+
+    <div class="result">
+        <div>Result</div>
+        <div class="value" id="result">--</div>
+    </div>
+
+</section>
+
+</main>
+
+<footer>
+    © 2026 CalcWise. All rights reserved.
+</footer>
+
+<script src="ohmslaw.js"></script>
+
+</body>
+</html>

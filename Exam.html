@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Exam Score Needed Calculator - CalcWise</title>
+
+    <link rel="stylesheet" href="study.css">
+</head>
+
+<body>
+
+<header>
+
+    <div class="logo">
+        <img src="calc.jpg alt="CalcWise Logo" class="logo-img">
+     CALCWISE</div>
+
+        <nav>
+        <a href="index.html">Home</a>
+        <a href="index.html">All Calculators</a>
+        <a href="#">About</a>
+    </nav>
+
+
+</header>
+
+<main>
+
+    <a class="back" href="IT.html">← Back to IT CALC</a>
+
+    <section class="hero">
+
+        <h1>Exam Score Needed Calculator</h1>
+
+        <p>
+            Calculate the score you need on your exam to reach your target grade.
+        </p>
+
+    </section>
+
+    <section class="card">
+
+        <label>Current Grade (%)</label>
+
+        <input
+            type="number"
+            id="currentGrade"
+            placeholder="Enter current grade"
+        >
+
+        <label>Target Grade (%)</label>
+
+        <input
+            type="number"
+            id="targetGrade"
+            placeholder="Enter target grade"
+        >
+
+        <label>Exam Weight (%)</label>
+
+        <input
+            type="number"
+            id="examWeight"
+            placeholder="Enter exam weight"
+        >
+
+        <button onclick="calculate()">
+            Calculate Needed Score
+        </button>
+
+        <div class="result">
+
+            <div>Needed Exam Score</div>
+
+            <div class="value" id="result">--</div>
+
+        </div>
+
+    </section>
+
+</main>
+
+<footer>
+    © 2026 CalcWise. All rights reserved.
+</footer>
+
+
+<script>
+
+function calculate() {
+
+    let currentGrade = Number(
+        document.getElementById("currentGrade").value
+    );
+
+    let targetGrade = Number(
+        document.getElementById("targetGrade").value
+    );
+
+    let examWeight = Number(
+        document.getElementById("examWeight").value
+    );
+
+
+    
+    if (
+        currentGrade < 0 ||
+        currentGrade > 100 ||
+        targetGrade < 0 ||
+        targetGrade > 100 ||
+        examWeight <= 0 ||
+        examWeight > 100
+    ) {
+
+        document.getElementById("result").textContent =
+            "Invalid input";
+
+        return;
+    }
+
+
+
+    let remainingWeight = 100 - examWeight;
+
+    let neededScore =
+        (targetGrade - (currentGrade * remainingWeight / 100))
+        / (examWeight / 100);
+
+
+    
+    if (neededScore <= 0) {
+
+        document.getElementById("result").textContent =
+            "0.00%";
+
+    } else if (neededScore > 100) {
+
+        document.getElementById("result").textContent =
+            "Over 100% needed";
+
+    } else {
+
+        document.getElementById("result").textContent =
+            neededScore.toFixed(2) + "%";
+    }
+
+}
+
+</script>
+
+</body>
+</html>

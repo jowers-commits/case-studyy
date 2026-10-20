@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Speed, Distance & Time | Calcora</title>
+
+<link rel="stylesheet" href="study.css">
+</head>
+
+<body>
+
+<header>
+<div class="logo">
+    <img src="calc.jpg" alt="CalcWise Logo" class="logo-img">
+   
+CALCWISE
+</div>
+
+
+<    <nav>
+        <a href="index.html">Home</a>
+        <a href="index.html">All Calculators</a>
+        <a href="#">About</a>
+    </nav>
+>
+</header>
+
+<main>
+<a class="back" href="IT.html">← Back to IT CALC</a>
+
+
+
+<section class="hero">
+<h1>Speed, Distance & Time Calculator</h1>
+
+<p>
+Calculate speed, distance, or time quickly and accurately.
+</p>
+</section>
+
+
+<section class="card">
+
+<label for="calculateType">
+Calculate
+</label>
+
+<select id="calculateType">
+
+<option value="speed">
+Speed
+</option>
+
+<option value="distance">
+Distance
+</option>
+
+<option value="time">
+Time
+</option>
+
+</select>
+
+
+<!-- FIRST INPUT -->
+
+<label id="label1" for="input1">
+Distance
+</label>
+
+<div class="row">
+
+<input
+type="number"
+id="input1"
+placeholder="Enter distance"
+min="0"
+step="any"
+>
+
+<select id="unit1">
+
+<option value="km">
+Kilometers (km)
+</option>
+
+<option value="m">
+Meters (m)
+</option>
+
+<option value="mi">
+Miles (mi)
+</option>
+
+</select>
+
+</div>
+
+
+<!-- SECOND INPUT -->
+
+<label id="label2" for="input2">
+Time
+</label>
+
+<div class="row">
+
+<input
+type="number"
+id="input2"
+placeholder="Enter time"
+min="0"
+step="any"
+>
+
+<select id="unit2">
+
+<option value="h">
+Hours
+</option>
+
+<option value="min">
+Minutes
+</option>
+
+<option value="sec">
+Seconds
+</option>
+
+</select>
+
+</div>
+
+
+<button type="button" id="calculateButton">
+Calculate
+</button>
+
+
+<div class="result">
+
+<div>Result</div>
+
+<div class="value" id="result">
+—
+</div>
+
+<div id="formula">
+Speed = Distance ÷ Time
+</div>
+
+<div class="note" id="note">
+Enter the values and click Calculate.
+</div>
+
+</div>
+
+</section>
+
+
+<section class="about-section">
+
+<p>FORMULAS</p>
+
+<h2>Speed, Distance and Time</h2>
+
+<p>
+Speed, distance, and time are related using
+three basic formulas.
+</p>
+
+<p>
+<strong>Speed = Distance ÷ Time</strong><br>
+<strong>Distance = Speed × Time</strong><br>
+<strong>Time = Distance ÷ Speed</strong>
+</p>
+
+</section>
+
+</main>
+
+
+<footer>
+© 2026 Calcora. All Rights Reserved.
+</footer>
+
+
+<script src="java.js"></script>
+
+</body>
+</html>

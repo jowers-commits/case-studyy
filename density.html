@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CALCWISE</title>
+<link rel="stylesheet" href="study.css">
+     
+
+</head>
+<body>
+    <header><div class="logo">
+        <img src="calc.jpg" alt="CalcWise Logo" class="logo-img">
+CALCWISE
+</div>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="index.html">All Calculators</a>
+        <a href="#">About</a>
+    </nav>
+
+
+</header>
+<main><a href="index.html" class="back">
+← Back to Home
+</a>
+
+<div class="header">
+ <h1>CALCWISE</h1>
+
+</div>
+
+<div class="container">
+ <div class="card">
+ <h2>Calculate Density</h2>
+ <div class="formula">ρ = m / V</div>
+
+ <div class="form-group">
+ <label>Mass</label>
+ <div class="input-row">
+ <input type="number" id="mass" placeholder="Enter mass" step="any">
+ <select id="massUnit">
+ <option value="g">grams (g)</option>
+ <option value="kg">kilograms (kg)</option>
+ <option value="mg">milligrams (mg)</option>
+ </select>
+ </div>
+ </div>
+
+ <div class="form-group">
+ <label>Volume</label>
+ <div class="input-row">
+ <input type="number" id="volume" placeholder="Enter volume" step="any">
+ <select id="volumeUnit">
+ <option value="cm3">cm³ / mL</option>
+ <option value="m3">m³</option>
+ <option value="L">Liters (L)</option>
+ </select>
+ </div>
+ </div>
+
+ <button onclick="calculateDensity()">Calculate Density</button>
+ <button class="btn-clear" onclick="clearAll()">Clear</button>
+
+ <div id="resultArea" style="display:none;">
+ <div class="result">
+ <h3>Result</h3>
+ <div class="big-number" id="densityValue">0</div>
+ <div class="unit" id="densityUnit">g/cm³</div>
+ </div>
+ </div>
+
+
+ </div>
+
+
+
+<script>
+function calculateDensity() {
+ let mass = parseFloat(document.getElementById("mass").value);
+ let volume = parseFloat(document.getElementById("volume").value);
+ let massUnit = document.getElementById("massUnit").value;
+ let volumeUnit = document.getElementById("volumeUnit").value;
+
+ // Validation
+ if (isNaN(mass) || isNaN(volume)) {
+ alert("Please enter Mass and Volume!");
+ return;
+ }
+ if (volume <= 0) {
+ alert("Volume must be greater than 0!");
+ return;
+ }
+
+ // Convert to base units: g and cm3
+ let massInGrams = mass;
+ if (massUnit === "kg") massInGrams = mass * 1000;
+ if (massUnit === "mg") massInGrams = mass / 1000;
+
+ let volumeInCm3 = volume;
+ if (volumeUnit === "m3") volumeInCm3 = volume * 1000000;
+ if (volumeUnit === "L") volumeInCm3 = volume * 1000;
+
+ // COMPUTATION: Density = Mass / Volume
+ let density = massInGrams / volumeInCm3;
+
+ // Display
+ document.getElementById("densityValue").innerText = density.toFixed(4);
+ document.getElementById("densityUnit").innerText = "g/cm³";
+ document.getElementById("resultArea").style.display = "block";
+ 
+ document.getElementById("resultArea").scrollIntoView({ behavior: 'smooth' });
+}
+
+function clearAll() {
+ document.getElementById("mass").value = "";
+ document.getElementById("volume").value = "";
+ document.getElementById("resultArea").style.display = "none";
+}
+</script>
+
+</body>
+</html>

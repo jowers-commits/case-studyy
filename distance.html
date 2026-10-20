@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Distance Converter</title>
+   
+    <link rel="stylesheet" href="study.css">
+</head>
+<body>
+ <div class="logo">
+            <img src="calc.jpg" alt="CalcWise Logo" class="logo-img">
+             CALCWISE
+        </div>
+
+            <nav>
+        <a href="index.html">Home</a>
+        <a href="index.html">All Calculators</a>
+        <a href="#">About</a>
+    </nav>
+
+
+    </header>
+   
+<a class="back" href="sports.html">← Back to Sports Calc</a>
+    
+    <div class="calculator-box">
+        <label for="inputValue">Enter Distance:</label>
+        <input type="number" id="inputValue" placeholder="0.00">
+        
+        
+        
+        <select id="unitFrom">
+            <option value="km">Kilometers</option>
+            <option value="m">Meters</option>
+            <option value="mi">Miles</option>
+            <option value="ft">Feet</option>
+        </select>
+        
+        <span>to</span>
+        
+        <select id="unitTo">
+            <option value="mi">Miles</option>
+            <option value="km">Kilometers</option>
+            <option value="m">Meters</option>
+            <option value="ft">Feet</option>
+        </select>
+
+        <br><br>
+        <button onclick="convertDistance()">Convert</button>
+
+        <h2 id="result">Result: --</h2>
+    </div>
+
+    <script>
+        function convertDistance() {
+            let input = document.getElementById("inputValue").value;
+            let from = document.getElementById("unitFrom").value;
+            let to = document.getElementById("unitTo").value;
+            let resultDisplay = document.getElementById("result");
+
+            if (input === "" || isNaN(input)) {
+                resultDisplay.innerText = "Result: Please enter a valid number.";
+                return;
+            }
+
+            let meters;
+            
+            if (from === "km") meters = input * 1000;
+            else if (from === "m") meters = input * 1;
+            else if (from === "mi") meters = input * 1609.34;
+            else if (from === "ft") meters = input * 0.3048;
+
+            let finalResult;
+            
+            if (to === "km") finalResult = meters / 1000;
+            else if (to === "m") finalResult = meters / 1;
+            else if (to === "mi") finalResult = meters / 1609.34;
+            else if (to === "ft") finalResult = meters / 0.3048;
+
+            
+            resultDisplay.innerText = "Result: " + finalResult.toFixed(2) + " " + to;
+        }
+    </script>
+
+</body>
+</html>

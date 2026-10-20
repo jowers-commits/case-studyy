@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jump / Workout Timer</title>
+    <link rel="stylesheet" href="study.css">
+</head>
+
+<body>
+
+<header>
+    <div class="logo">
+        <img src="calc.jpg" alt="CalcWise Logo" class="logo-img">
+        CALCWISE</div>
+
+        <nav>
+        <a href="index.html">Home</a>
+        <a href="index.html">All Calculators</a>
+        <a href="#">About</a>
+    </nav>
+
+</header>
+
+<main>
+
+    <a class="back" href="sports.html">← Back to Sports Calc</a>
+    
+
+    <section class="hero">
+        <h1>Jump / Workout Timer</h1>
+        <p>Set a timer for your workout or jumping exercise.</p>
+    </section>
+
+    <section class="card">
+
+        <div class="row">
+
+            <div>
+                <label>Minutes</label>
+                <input type="number" id="minutes" value="0" min="0">
+            </div>
+
+            <div>
+                <label>Seconds</label>
+                <input type="number" id="seconds" value="30" min="0">
+            </div>
+
+        </div>
+
+        <button onclick="startTimer()">Start Timer</button>
+
+        <button onclick="stopTimer()">Stop Timer</button>
+
+        <div class="result">
+            <div>Time Remaining</div>
+            <div class="value" id="timer">00:00</div>
+            <div class="note">Workout timer</div>
+        </div>
+
+    </section>
+
+</main>
+
+<footer>
+    Jump / Workout Timer
+</footer>
+
+<script src="timer.js"></script>
+
+</body>
+</html>

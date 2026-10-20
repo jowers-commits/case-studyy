@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Tax Calculator - CalcWise</title>
+
+    <link rel="stylesheet" href="study.css">
+</head>
+
+<body>
+
+    <header>
+        <div class="logo">
+            <img src="calc.jpg" alt="CalcWise Logo" class="logo-img">
+            CALCWISE</div>
+    </header>
+
+    <main class="calculator-container">
+        <a class="back" href="money.html">← Back to About Money</a>
+
+
+        <h1>Tax Calculator</h1>
+        <p>Calculate the tax amount and total price.</p>
+
+        <form id="taxForm">
+
+            <label for="price">Original Amount</label>
+            <input type="number" id="price" step="0.01" required>
+
+            <label for="taxRate">Tax Rate (%)</label>
+            <input type="number" id="taxRate" step="0.01" required>
+
+            <button type="submit">Calculate Tax</button>
+
+        </form>
+
+        <div id="result"></div>
+
+    </main>
+
+    <script src="tax.js"></script>
+   
+
+</body>
+</html>

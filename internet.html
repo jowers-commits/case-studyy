@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Internet Speed Calculator</title>
+
+        <link rel="stylesheet" href="study.css">
+</head>
+
+<body>
+
+<header>
+
+    <div class="logo">
+        <span class="logo-icon">
+            <img src="calc.jpg" alt="CalcWise Logo" class="logo-img">
+        </span>
+        CALCWISE
+    </div>
+
+        <nav>
+        <a href="index.html">Home</a>
+        <a href="index.html">All Calculators</a>
+        <a href="#">About</a>
+    </nav>
+
+
+</header>
+
+
+<main>
+
+    
+<a class="back" href="IT.html">← Back to IT CALC</a>
+
+    <section class="hero">
+
+        <h1>Internet Speed Calculator</h1>
+
+        <p>
+            Calculate internet speeds, file download times,
+            and convert between common internet speed units.
+        </p>
+
+    </section>
+
+
+    <section class="card" id="calculator">
+
+        <form id="speedForm">
+
+            <label for="calculationType">
+                Calculation
+            </label>
+
+            <select id="calculationType">
+
+                <option value="speed">
+                    Calculate Internet Speed
+                </option>
+
+                <option value="download">
+                    Calculate Download Time
+                </option>
+
+                <option value="convert">
+                    Convert Speed
+                </option>
+
+            </select>
+
+
+            <div id="speedInputs">
+
+                <div class="row">
+
+                    <div>
+                        <label for="dataAmount">
+                            Data Transferred
+                        </label>
+
+                        <input
+                            type="number"
+                            id="dataAmount"
+                            placeholder="e.g. 500"
+                            min="0"
+                            step="any"
+                        >
+                    </div>
+
+
+                    <div>
+                        <label for="dataUnit">
+                            Data Unit
+                        </label>
+
+                        <select id="dataUnit">
+
+                            <option value="KB">KB</option>
+                            <option value="MB">MB</option>
+                            <option value="GB">GB</option>
+                            <option value="TB">TB</option>
+
+                        </select>
+                    </div>
+
+                </div>
+
+
+                <div class="row">
+
+                    <div>
+                        <label for="timeAmount">
+                            Time
+                        </label>
+
+                        <input
+                            type="number"
+                            id="timeAmount"
+                            placeholder="e.g. 10"
+                            min="0"
+                            step="any"
+                        >
+                    </div>
+
+
+                    <div>
+                        <label for="timeUnit">
+                            Time Unit
+                        </label>
+
+                        <select id="timeUnit">
+
+                            <option value="seconds">
+                                Seconds
+                            </option>
+
+                            <option value="minutes">
+                                Minutes
+                            </option>
+
+                            <option value="hours">
+                                Hours
+                            </option>
+
+                        </select>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <div id="downloadInputs" style="display: none;">
+
+                <div class="row">
+
+                    <div>
+                        <label for="fileSize">
+                            File Size
+                        </label>
+
+                        <input
+                            type="number"
+                            id="fileSize"
+                            placeholder="e.g. 2"
+                            min="0"
+                            step="any"
+                        >
+                    </div>
+
+
+                    <div>
+                        <label for="fileUnit">
+                            File Unit
+                        </label>
+
+                        <select id="fileUnit">
+
+                            <option value="KB">KB</option>
+                            <option value="MB">MB</option>
+                            <option value="GB">GB</option>
+                            <option value="TB">TB</option>
+
+                        </select>
+                    </div>
+
+                </div>
+
+
+                <div class="row">
+
+                    <div>
+                        <label for="internetSpeed">
+                            Internet Speed
+                        </label>
+
+                        <input
+                            type="number"
+                            id="internetSpeed"
+                            placeholder="e.g. 100"
+                            min="0"
+                            step="any"
+                        >
+                    </div>
+
+
+                    <div>
+                        <label for="speedUnit">
+                            Speed Unit
+                        </label>
+
+                        <select id="speedUnit">
+
+                            <option value="Mbps">
+                                Mbps
+                            </option>
+
+                            <option value="Gbps">
+                                Gbps
+                            </option>
+
+                            <option value="Kbps">
+                                Kbps
+                            </option>
+
+                            <option value="MBps">
+                                MB/s
+                            </option>
+
+                        </select>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <div id="convertInputs" style="display: none;">
+
+                <label for="convertValue">
+                    Speed
+                </label>
+
+                <input
+                    type="number"
+                    id="convertValue"
+                    placeholder="Enter speed"
+                    min="0"
+                    step="any"
+                >
+
+
+                <label for="convertUnit">
+                    From Unit
+                </label>
+
+                <select id="convertUnit">
+
+                    <option value="Kbps">
+                        Kilobits per second (Kbps)
+                    </option>
+
+                    <option value="Mbps">
+                        Megabits per second (Mbps)
+                    </option>
+
+                    <option value="Gbps">
+                        Gigabits per second (Gbps)
+                    </option>
+
+                    <option value="KBps">
+                        Kilobytes per second (KB/s)
+                    </option>
+
+                    <option value="MBps">
+                        Megabytes per second (MB/s)
+                    </option>
+
+                    <option value="GBps">
+                        Gigabytes per second (GB/s)
+                    </option>
+
+                </select>
+
+
+                <label for="convertTo">
+                    Convert To
+                </label>
+
+                <select id="convertTo">
+
+                    <option value="Mbps">
+                        Megabits per second (Mbps)
+                    </option>
+
+                    <option value="Kbps">
+                        Kilobits per second (Kbps)
+                    </option>
+
+                    <option value="Gbps">
+                        Gigabits per second (Gbps)
+                    </option>
+
+                    <option value="KBps">
+                        Kilobytes per second (KB/s)
+                    </option>
+
+                    <option value="MBps">
+                        Megabytes per second (MB/s)
+                    </option>
+
+                    <option value="GBps">
+                        Gigabytes per second (GB/s)
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <button type="submit">
+                Calculate
+            </button>
+
+        </form>
+
+
+        <div class="result" id="result">
+
+            <div class="result-title">
+                Result
+            </div>
+
+            <div class="value" id="resultValue">
+                --
+            </div>
+
+            <div class="note" id="formula">
+                Enter values and click Calculate.
+            </div>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+<footer>
+    Internet Speed Calculator
+</footer>
+
+
+<script src = "internet.js"></script>
+
+</body>
+</html>
